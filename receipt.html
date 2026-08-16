@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+
+{% block title %}
+Receipt #{{ order.order_id }} | OSC Burger Co.
+{% endblock %}
+
+{% block content %}
+
+<section class="receipt-wrap">
+
+    <div class="receipt-header">
+
+        <div>
+
+            <p class="eyebrow">
+                ORDER COMPLETE
+            </p>
+
+            <h1>
+                Thanks, {{ order.customer_name }}!
+            </h1>
+
+            <p>
+                Order #{{ order.order_id }}
+                · {{ order.date }}
+            </p>
+
+        </div>
+
+        <span class="status active">
+            {{ order.status }}
+        </span>
+
+    </div>
+
+
+    <div class="receipt-card">
+
+        <div class="receipt-section">
+
+            <h2>
+                Your order
+            </h2>
+
+            {% for item in order.items %}
+
+            <div class="receipt-line">
+
+                <div>
+
+                    <strong>
+                        {{ item.name }}
+                    </strong>
+
+                    <span>
+                        {{ item.quantity }}
+                        ×
+                        ${{ "%.2f"|format(item.price) }}
+                    </span>
+
+                </div>
+
+                <strong>
+                    ${{ "%.2f"|format(item.item_total) }}
+                </strong>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+
+        <div class="totals">
+
+            <div>
+                <span>Subtotal</span>
+
+                <strong>
+                    ${{ "%.2f"|format(order.subtotal) }}
+                </strong>
+            </div>
+
+            <div>
+                <span>Bulk discount</span>
+
+                <strong>
+                    -${{ "%.2f"|format(order.discount) }}
+                </strong>
+            </div>
+
+            <div>
+                <span>Delivery</span>
+
+                <strong>
+                    ${{ "%.2f"|format(order.delivery_charge) }}
+                </strong>
+            </div>
+
+            <div class="grand-total">
+
+                <span>
+                    Total
+                </span>
+
+                <strong>
+                    ${{ "%.2f"|format(order.total) }}
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="customer-box">
+
+            <h3>
+                Customer information
+            </h3>
+
+            <p>
+                <strong>Name:</strong>
+                {{ order.customer_name }}
+            </p>
+
+            <p>
+                <strong>Method:</strong>
+
+                {% if order.delivery %}
+                    Delivery
+                {% else %}
+                    Pickup
+                {% endif %}
+
+            </p>
+
+            {% if order.delivery %}
+
+                <p>
+                    <strong>Address:</strong>
+                    {{ order.address }}
+                </p>
+
+                <p>
+                    <strong>Phone:</strong>
+                    {{ order.phone }}
+                </p>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+
+    <div class="action-row">
+
+        <a
+            class="secondary-button"
+            href="{{ url_for('index') }}"
+        >
+            New order
+        </a>
+
+        <a
+            class="secondary-button"
+            href="{{ url_for('order_history') }}"
+        >
+            Order history
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}
