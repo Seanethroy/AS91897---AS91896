@@ -1,0 +1,334 @@
+{% extends "base.html" %}
+
+{% block title %}
+Menu | OSC Burger Co.
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+
+    <div class="hero-copy">
+
+        <p class="eyebrow">
+            OSC STUDENT FUNDRAISER
+        </p>
+
+        <h1>
+            Good food.<br>
+            <span>Good cause.</span>
+        </h1>
+
+        <p>
+            Build your burger order below.
+            Stock is updated automatically after
+            a successful order.
+        </p>
+
+        <div class="hero-pills">
+            <span>10 item maximum</span>
+            <span>10% bulk discount</span>
+            <span>$3 delivery</span>
+        </div>
+
+    </div>
+
+    <div class="hero-art" aria-hidden="true">
+
+        <div class="burger-illustration">
+            <div class="bun-top"></div>
+            <div class="lettuce"></div>
+            <div class="patty"></div>
+            <div class="cheese"></div>
+            <div class="bun-bottom"></div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<form
+    class="order-form"
+    action="{{ url_for('place_order') }}"
+    method="POST"
+>
+
+    <section class="section-heading">
+
+        <div>
+
+            <p class="eyebrow">
+                STEP 01
+            </p>
+
+            <h2>
+                Choose your burgers
+            </h2>
+
+        </div>
+
+        <p>
+            Enter a quantity for each item you want.
+        </p>
+
+    </section>
+
+
+    <div class="product-grid">
+
+        {% for name, product in products.items() %}
+
+        <article class="product-card">
+
+            <div class="product-top">
+
+                <span class="product-icon">
+                    🍔
+                </span>
+
+                {% if product.stock == 0 %}
+
+                    <span class="stock sold-out">
+                        Sold out
+                    </span>
+
+                {% elif product.stock <= 5 %}
+
+                    <span class="stock low-stock">
+                        Low stock
+                    </span>
+
+                {% else %}
+
+                    <span class="stock">
+                        {{ product.stock }} left
+                    </span>
+
+                {% endif %}
+
+            </div>
+
+
+            <h3>
+                {{ name }}
+            </h3>
+
+            <p>
+                {{ product.description }}
+            </p>
+
+
+            <div class="product-bottom">
+
+                <strong>
+                    ${{ "%.2f"|format(product.price) }}
+                </strong>
+
+                <label>
+
+                    <span class="sr-only">
+                        Quantity for {{ name }}
+                    </span>
+
+                    <input
+                        type="number"
+                        name="quantity_{{ name }}"
+                        min="0"
+                        max="{{ [product.stock, max_items]|min }}"
+                        value="0"
+                        {% if product.stock == 0 %}
+                            disabled
+                        {% endif %}
+                    >
+
+                </label>
+
+            </div>
+
+        </article>
+
+        {% endfor %}
+
+    </div>
+
+
+    <section class="checkout-layout">
+
+        <div class="checkout-card">
+
+            <p class="eyebrow">
+                STEP 02
+            </p>
+
+            <h2>
+                Customer details
+            </h2>
+
+
+            <label for="customer_name">
+                Your name
+            </label>
+
+            <input
+                id="customer_name"
+                name="customer_name"
+                type="text"
+                maxlength="50"
+                placeholder="e.g. Seane Ecraela"
+                required
+            >
+
+
+            <fieldset>
+
+                <legend>
+                    Order method
+                </legend>
+
+                <label class="choice">
+
+                    <input
+                        type="radio"
+                        name="delivery"
+                        value="pickup"
+                        checked
+                        onchange="toggleDelivery(false)"
+                    >
+
+                    <span>
+                        Pickup
+                    </span>
+
+                </label>
+
+
+                <label class="choice">
+
+                    <input
+                        type="radio"
+                        name="delivery"
+                        value="delivery"
+                        onchange="toggleDelivery(true)"
+                    >
+
+                    <span>
+                        Delivery (+$3.00)
+                    </span>
+
+                </label>
+
+            </fieldset>
+
+
+            <div
+                id="delivery-fields"
+                class="delivery-fields hidden"
+            >
+
+                <label for="address">
+                    Delivery address
+                </label>
+
+                <input
+                    id="address"
+                    name="address"
+                    type="text"
+                    placeholder="Street, suburb"
+                >
+
+
+                <label for="phone">
+                    Phone number
+                </label>
+
+                <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    placeholder="e.g. 021 123 4567"
+                >
+
+            </div>
+
+        </div>
+
+
+        <aside class="summary-card">
+
+            <p class="eyebrow">
+                STEP 03
+            </p>
+
+            <h2>
+                Before you submit
+            </h2>
+
+
+            <ul class="summary-list">
+
+                <li>
+                    <span>Maximum order</span>
+                    <strong>{{ max_items }}</strong>
+                </li>
+
+                <li>
+                    <span>Bulk discount</span>
+                    <strong>10%</strong>
+                </li>
+
+                <li>
+                    <span>Delivery fee</span>
+                    <strong>$3.00</strong>
+                </li>
+
+            </ul>
+
+
+            <div class="info-box">
+
+                <strong>
+                    Tip
+                </strong>
+
+                <p>
+                    Orders of 5 or more total items
+                    receive the bulk discount.
+                </p>
+
+            </div>
+
+
+            <button
+                class="primary-button"
+                type="submit"
+            >
+                Place order →
+            </button>
+
+        </aside>
+
+    </section>
+
+</form>
+
+
+<script>
+function toggleDelivery(show) {
+    const fields =
+        document.getElementById("delivery-fields");
+
+    const address =
+        document.getElementById("address");
+
+    const phone =
+        document.getElementById("phone");
+
+    fields.classList.toggle("hidden", !show);
+
+    address.required = show;
+    phone.required = show;
+}
+</script>
+
+{% endblock %}
