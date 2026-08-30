@@ -4,6 +4,7 @@
 Menu | OSC Burger Co.
 {% endblock %}
 
+
 {% block content %}
 
 <section class="hero">
@@ -26,21 +27,41 @@ Menu | OSC Burger Co.
         </p>
 
         <div class="hero-pills">
-            <span>10 item maximum</span>
-            <span>10% bulk discount</span>
-            <span>$3 delivery</span>
+
+            <span>
+                10 item maximum
+            </span>
+
+            <span>
+                10% bulk discount
+            </span>
+
+            <span>
+                $3 delivery
+            </span>
+
         </div>
 
     </div>
 
-    <div class="hero-art" aria-hidden="true">
+
+    <div
+        class="hero-art"
+        aria-hidden="true"
+    >
 
         <div class="burger-illustration">
+
             <div class="bun-top"></div>
+
             <div class="lettuce"></div>
+
             <div class="patty"></div>
+
             <div class="cheese"></div>
+
             <div class="bun-bottom"></div>
+
         </div>
 
     </div>
@@ -53,6 +74,7 @@ Menu | OSC Burger Co.
     action="{{ url_for('place_order') }}"
     method="POST"
 >
+
 
     <section class="section-heading">
 
@@ -87,6 +109,7 @@ Menu | OSC Burger Co.
                     🍔
                 </span>
 
+
                 {% if product.stock == 0 %}
 
                     <span class="stock sold-out">
@@ -114,6 +137,7 @@ Menu | OSC Burger Co.
                 {{ name }}
             </h3>
 
+
             <p>
                 {{ product.description }}
             </p>
@@ -124,6 +148,7 @@ Menu | OSC Burger Co.
                 <strong>
                     ${{ "%.2f"|format(product.price) }}
                 </strong>
+
 
                 <label>
 
@@ -155,6 +180,7 @@ Menu | OSC Burger Co.
 
     <section class="checkout-layout">
 
+
         <div class="checkout-card">
 
             <p class="eyebrow">
@@ -185,6 +211,7 @@ Menu | OSC Burger Co.
                 <legend>
                     Order method
                 </legend>
+
 
                 <label class="choice">
 
@@ -268,18 +295,41 @@ Menu | OSC Burger Co.
             <ul class="summary-list">
 
                 <li>
-                    <span>Maximum order</span>
-                    <strong>{{ max_items }}</strong>
+
+                    <span>
+                        Maximum order
+                    </span>
+
+                    <strong>
+                        {{ max_items }}
+                    </strong>
+
                 </li>
 
-                <li>
-                    <span>Bulk discount</span>
-                    <strong>10%</strong>
-                </li>
 
                 <li>
-                    <span>Delivery fee</span>
-                    <strong>$3.00</strong>
+
+                    <span>
+                        Bulk discount
+                    </span>
+
+                    <strong>
+                        10%
+                    </strong>
+
+                </li>
+
+
+                <li>
+
+                    <span>
+                        Delivery fee
+                    </span>
+
+                    <strong>
+                        $3.00
+                    </strong>
+
                 </li>
 
             </ul>
@@ -314,21 +364,33 @@ Menu | OSC Burger Co.
 
 
 <script>
+
 function toggleDelivery(show) {
+
     const fields =
-        document.getElementById("delivery-fields");
+        document.getElementById(
+            "delivery-fields"
+        );
 
     const address =
-        document.getElementById("address");
+        document.getElementById(
+            "address"
+        );
 
     const phone =
-        document.getElementById("phone");
+        document.getElementById(
+            "phone"
+        );
 
-    fields.classList.toggle("hidden", !show);
+    fields.classList.toggle(
+        "hidden",
+        !show
+    );
 
     address.required = show;
     phone.required = show;
 }
+
 </script>
 
 {% endblock %}

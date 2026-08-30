@@ -1,40 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0"
     >
+
     <title>
         {% block title %}OSC Burger Co.{% endblock %}
     </title>
 
     <link
         rel="stylesheet"
-        href="{{ url_for('static', filename='style.css') }}"
+        href="{{ url_for(
+            'static',
+            filename='style.css'
+        ) }}"
     >
+
 </head>
 
 <body>
 
 <header class="site-header">
+
     <div class="nav-wrap">
 
-        <a class="brand" href="{{ url_for('index') }}">
+        <a
+            class="brand"
+            href="{{ url_for('index') }}"
+        >
 
             <span class="brand-mark">
                 OB
             </span>
 
             <span>
-                <strong>OSC Burger Co.</strong>
-                <small>Student Fundraiser</small>
+
+                <strong>
+                    OSC Burger Co.
+                </strong>
+
+                <small>
+                    Student Fundraiser
+                </small>
+
             </span>
 
         </a>
 
         <nav>
+
             <a href="{{ url_for('index') }}">
                 Menu
             </a>
@@ -42,10 +62,13 @@
             <a href="{{ url_for('order_history') }}">
                 Order History
             </a>
+
         </nav>
 
     </div>
+
 </header>
+
 
 <main class="page-shell">
 
@@ -74,15 +97,20 @@
 
     {% endwith %}
 
+
     {% block content %}{% endblock %}
 
 </main>
 
+
 <footer class="site-footer">
+
     <p>
-        OSC Burger Co. · Practice Scenario 1 Application
+        OSC Burger Co. · Scenario 1 Practice
     </p>
+
 </footer>
 
 </body>
+
 </html>

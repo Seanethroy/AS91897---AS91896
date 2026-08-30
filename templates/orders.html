@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+
+{% block title %}
+Order History | OSC Burger Co.
+{% endblock %}
+
+
+{% block content %}
+
+<section class="page-heading">
+
+    <p class="eyebrow">
+        MANAGEMENT
+    </p>
+
+    <h1>
+        Order history
+    </h1>
+
+    <p>
+        View saved customer orders and
+        cancel active orders.
+    </p>
+
+</section>
+
+
+{% if orders %}
+
+<div class="orders-table-wrap">
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>
+                    Order
+                </th>
+
+                <th>
+                    Customer
+                </th>
+
+                <th>
+                    Items
+                </th>
+
+                <th>
+                    Total
+                </th>
+
+                <th>
+                    Status
+                </th>
+
+                <th>
+                    Action
+                </th>
+
+            </tr>
+
+        </thead>
+
+
+        <tbody>
+
+            {% for order in orders|reverse %}
+
+            <tr>
+
+                <td>
+                    #{{ order.order_id }}
+                </td>
+
+
+                <td>
+                    {{ order.customer_name }}
+                </td>
+
+
+                <td>
+                    {{ order.total_items }}
+                </td>
+
+
+                <td>
+                    ${{ "%.2f"|format(order.total) }}
+                </td>
+
+
+                <td>
+
+                    <span
+                        class="status
+                        {{ order.status|lower }}"
+                    >
+                        {{ order.status }}
+                    </span>
+
+                </td>
+
+
+                <td class="table-actions">
+
+                    <a
+                        href="{{ url_for(
+                            'receipt',
+                            order_id=order.order_id
+                        ) }}"
+                    >
+                        View
+                    </a>
+
+
+                    {% if order.status == "Active" %}
+
+                    <form
+                        action="{{ url_for(
+                            'cancel_order',
+                            order_id=order.order_id
+                        ) }}"
+                        method="POST"
+                    >
+
+                        <button
+                            class="danger-link"
+                            type="submit"
+                        >
+                            Cancel
+                        </button>
+
+                    </form>
+
+                    {% endif %}
+
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+
+{% else %}
+
+<section class="empty-state">
+
+    <div class="empty-icon">
+        🍔
+    </div>
+
+    <h2>
+        No orders yet
+    </h2>
+
+    <p>
+        Orders will appear here after the first
+        successful purchase.
+    </p>
+
+    <a
+        class="primary-button"
+        href="{{ url_for('index') }}"
+    >
+        Create an order
+    </a>
+
+</section>
+
+{% endif %}
+
+{% endblock %}

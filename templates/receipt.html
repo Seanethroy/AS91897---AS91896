@@ -4,9 +4,11 @@
 Receipt #{{ order.order_id }} | OSC Burger Co.
 {% endblock %}
 
+
 {% block content %}
 
 <section class="receipt-wrap">
+
 
     <div class="receipt-header">
 
@@ -27,6 +29,7 @@ Receipt #{{ order.order_id }} | OSC Burger Co.
 
         </div>
 
+
         <span class="status active">
             {{ order.status }}
         </span>
@@ -36,11 +39,13 @@ Receipt #{{ order.order_id }} | OSC Burger Co.
 
     <div class="receipt-card">
 
+
         <div class="receipt-section">
 
             <h2>
                 Your order
             </h2>
+
 
             {% for item in order.items %}
 
@@ -60,6 +65,7 @@ Receipt #{{ order.order_id }} | OSC Burger Co.
 
                 </div>
 
+
                 <strong>
                     ${{ "%.2f"|format(item.item_total) }}
                 </strong>
@@ -74,28 +80,43 @@ Receipt #{{ order.order_id }} | OSC Burger Co.
         <div class="totals">
 
             <div>
-                <span>Subtotal</span>
+
+                <span>
+                    Subtotal
+                </span>
 
                 <strong>
                     ${{ "%.2f"|format(order.subtotal) }}
                 </strong>
+
             </div>
 
+
             <div>
-                <span>Bulk discount</span>
+
+                <span>
+                    Bulk discount
+                </span>
 
                 <strong>
                     -${{ "%.2f"|format(order.discount) }}
                 </strong>
+
             </div>
 
+
             <div>
-                <span>Delivery</span>
+
+                <span>
+                    Delivery
+                </span>
 
                 <strong>
                     ${{ "%.2f"|format(order.delivery_charge) }}
                 </strong>
+
             </div>
+
 
             <div class="grand-total">
 
@@ -118,13 +139,18 @@ Receipt #{{ order.order_id }} | OSC Burger Co.
                 Customer information
             </h3>
 
+
             <p>
                 <strong>Name:</strong>
                 {{ order.customer_name }}
             </p>
 
+
             <p>
-                <strong>Method:</strong>
+
+                <strong>
+                    Method:
+                </strong>
 
                 {% if order.delivery %}
                     Delivery
@@ -134,16 +160,28 @@ Receipt #{{ order.order_id }} | OSC Burger Co.
 
             </p>
 
+
             {% if order.delivery %}
 
                 <p>
-                    <strong>Address:</strong>
+
+                    <strong>
+                        Address:
+                    </strong>
+
                     {{ order.address }}
+
                 </p>
 
+
                 <p>
-                    <strong>Phone:</strong>
+
+                    <strong>
+                        Phone:
+                    </strong>
+
                     {{ order.phone }}
+
                 </p>
 
             {% endif %}
@@ -161,6 +199,7 @@ Receipt #{{ order.order_id }} | OSC Burger Co.
         >
             New order
         </a>
+
 
         <a
             class="secondary-button"
