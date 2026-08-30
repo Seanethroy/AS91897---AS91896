@@ -1,6 +1,6 @@
 /* =========================================================
-   OSC BURGER CO.
-   Main colour variables
+   COLOUR VARIABLES
+   Stores the main colours and shadow used throughout the site.
    ========================================================= */
 
 :root {
@@ -18,14 +18,14 @@
 }
 
 
-/* =========================================================
-   BASIC PAGE STYLING
-   ========================================================= */
+/* Sets box sizing for all elements. */
 
 * {
     box-sizing: border-box;
 }
 
+
+/* Main page appearance and default text settings. */
 
 body {
     margin: 0;
@@ -36,11 +36,15 @@ body {
 }
 
 
+/* Removes default link styling. */
+
 a {
     color: inherit;
     text-decoration: none;
 }
 
+
+/* Uses the page font for form controls. */
 
 button,
 input {
@@ -52,6 +56,8 @@ input {
    HEADER AND NAVIGATION
    ========================================================= */
 
+/* Creates the sticky navigation header. */
+
 .site-header {
     background: var(--paper);
     border-bottom: 1px solid var(--line);
@@ -60,6 +66,8 @@ input {
     z-index: 10;
 }
 
+
+/* Controls the size and layout of the navigation. */
 
 .nav-wrap {
     max-width: 1180px;
@@ -72,12 +80,16 @@ input {
 }
 
 
+/* Groups the logo and brand information. */
+
 .brand {
     display: flex;
     align-items: center;
     gap: 12px;
 }
 
+
+/* Creates the OSC logo box. */
 
 .brand-mark {
     width: 42px;
@@ -91,6 +103,8 @@ input {
     font-size: 13px;
 }
 
+
+/* Displays brand text on separate lines. */
 
 .brand strong,
 .brand small {
@@ -110,6 +124,8 @@ input {
 }
 
 
+/* Controls the navigation links. */
+
 nav {
     display: flex;
     gap: 8px;
@@ -125,6 +141,8 @@ nav a {
 }
 
 
+/* Changes navigation appearance on hover. */
+
 nav a:hover {
     background: var(--green-light);
     color: var(--green);
@@ -134,6 +152,8 @@ nav a:hover {
 /* =========================================================
    PAGE LAYOUT
    ========================================================= */
+
+/* Sets the maximum width and spacing of page content. */
 
 .page-shell {
     max-width: 1180px;
@@ -145,6 +165,8 @@ nav a:hover {
 /* =========================================================
    HERO SECTION
    ========================================================= */
+
+/* Creates the main landing-page hero section. */
 
 .hero {
     min-height: 390px;
@@ -160,11 +182,15 @@ nav a:hover {
 }
 
 
+/* Positions the hero text above the artwork. */
+
 .hero-copy {
     position: relative;
     z-index: 2;
 }
 
+
+/* Styles small section labels. */
 
 .eyebrow {
     margin: 0 0 8px;
@@ -175,6 +201,8 @@ nav a:hover {
 }
 
 
+/* Styles the main hero heading. */
+
 .hero h1 {
     margin: 0;
     font-size: clamp(42px, 6vw, 72px);
@@ -183,10 +211,14 @@ nav a:hover {
 }
 
 
+/* Highlights selected hero text. */
+
 .hero h1 span {
     color: #f3b77c;
 }
 
+
+/* Styles the hero description. */
 
 .hero-copy > p:not(.eyebrow) {
     max-width: 520px;
@@ -196,13 +228,16 @@ nav a:hover {
 }
 
 
-/* Hero information pills */
+/* Arranges the information pills. */
+
 .hero-pills {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
 }
 
+
+/* Styles each hero information pill. */
 
 .hero-pills span {
     padding: 8px 11px;
@@ -213,15 +248,15 @@ nav a:hover {
 }
 
 
-/* =========================================================
-   BURGER ILLUSTRATION
-   ========================================================= */
+/* Centres the burger illustration. */
 
 .hero-art {
     display: grid;
     place-items: center;
 }
 
+
+/* Controls the burger illustration size and shadow. */
 
 .burger-illustration {
     width: 260px;
@@ -231,10 +266,14 @@ nav a:hover {
 }
 
 
+/* Adds spacing between burger illustration layers. */
+
 .burger-illustration div {
     margin: 6px 0;
 }
 
+
+/* Burger illustration layers. */
 
 .bun-top {
     height: 92px;
@@ -275,11 +314,15 @@ nav a:hover {
    SECTION HEADINGS
    ========================================================= */
 
+/* Controls spacing around section headings. */
+
 .section-heading,
 .page-heading {
     margin: 58px 0 22px;
 }
 
+
+/* Aligns section heading content. */
 
 .section-heading {
     display: flex;
@@ -288,6 +331,8 @@ nav a:hover {
     gap: 24px;
 }
 
+
+/* Styles major section headings. */
 
 .section-heading h2,
 .checkout-card h2,
@@ -298,6 +343,8 @@ nav a:hover {
 }
 
 
+/* Styles supporting heading text. */
+
 .section-heading > p {
     color: var(--muted);
 }
@@ -307,12 +354,16 @@ nav a:hover {
    PRODUCT CARDS
    ========================================================= */
 
+/* Creates the responsive burger product grid. */
+
 .product-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
 }
 
+
+/* Shared card appearance. */
 
 .product-card,
 .checkout-card,
@@ -327,6 +378,8 @@ nav a:hover {
 }
 
 
+/* Controls individual burger cards. */
+
 .product-card {
     padding: 18px;
     display: flex;
@@ -334,6 +387,8 @@ nav a:hover {
     min-height: 240px;
 }
 
+
+/* Aligns product information rows. */
 
 .product-top,
 .product-bottom,
@@ -346,6 +401,8 @@ nav a:hover {
 }
 
 
+/* Creates the burger product icon. */
+
 .product-icon {
     width: 42px;
     height: 42px;
@@ -357,6 +414,8 @@ nav a:hover {
 }
 
 
+/* Styles normal stock labels. */
+
 .stock {
     color: var(--green);
     background: var(--green-light);
@@ -367,11 +426,15 @@ nav a:hover {
 }
 
 
+/* Styles low-stock labels. */
+
 .low-stock {
     color: #8c5d12;
     background: #fff1c9;
 }
 
+
+/* Styles sold-out labels. */
 
 .sold-out {
     color: var(--red);
@@ -379,11 +442,15 @@ nav a:hover {
 }
 
 
+/* Styles product names. */
+
 .product-card h3 {
     margin: 20px 0 5px;
     font-size: 17px;
 }
 
+
+/* Styles product descriptions. */
 
 .product-card p {
     margin: 0 0 20px;
@@ -393,10 +460,14 @@ nav a:hover {
 }
 
 
+/* Styles product prices. */
+
 .product-bottom strong {
     font-size: 19px;
 }
 
+
+/* Styles quantity inputs. */
 
 .product-bottom input {
     width: 66px;
@@ -411,6 +482,8 @@ nav a:hover {
    CHECKOUT
    ========================================================= */
 
+/* Creates the checkout and summary column layout. */
+
 .checkout-layout {
     display: grid;
     grid-template-columns: 1.35fr 0.65fr;
@@ -419,11 +492,15 @@ nav a:hover {
 }
 
 
+/* Adds spacing inside checkout cards. */
+
 .checkout-card,
 .summary-card {
     padding: 28px;
 }
 
+
+/* Styles checkout labels. */
 
 .checkout-card > label,
 .delivery-fields label {
@@ -433,6 +510,8 @@ nav a:hover {
     font-weight: 800;
 }
 
+
+/* Styles customer input fields. */
 
 .checkout-card > input,
 .delivery-fields input {
@@ -445,6 +524,8 @@ nav a:hover {
 }
 
 
+/* Highlights focused input fields. */
+
 .checkout-card input:focus {
     border-color: var(--green);
     box-shadow:
@@ -452,9 +533,7 @@ nav a:hover {
 }
 
 
-/* =========================================================
-   DELIVERY / PAYMENT OPTIONS
-   ========================================================= */
+/* Removes default fieldset styling. */
 
 fieldset {
     margin: 24px 0 0;
@@ -463,12 +542,16 @@ fieldset {
 }
 
 
+/* Styles form legends. */
+
 legend {
     margin-bottom: 9px;
     font-size: 13px;
     font-weight: 800;
 }
 
+
+/* Styles pickup/delivery choices. */
 
 .choice {
     display: inline-flex;
@@ -479,6 +562,8 @@ legend {
 }
 
 
+/* Hides elements when required by the HTML. */
+
 .hidden {
     display: none;
 }
@@ -487,6 +572,8 @@ legend {
 /* =========================================================
    ORDER SUMMARY
    ========================================================= */
+
+/* Styles the order summary card. */
 
 .summary-card {
     background: var(--green);
@@ -504,12 +591,16 @@ legend {
 }
 
 
+/* Removes default list styling. */
+
 .summary-list {
     padding: 0;
     margin: 0;
     list-style: none;
 }
 
+
+/* Styles individual order summary items. */
 
 .summary-list li {
     display: flex;
@@ -526,6 +617,8 @@ legend {
     color: white;
 }
 
+
+/* Styles additional information inside the summary. */
 
 .info-box {
     margin: 22px 0;
@@ -546,6 +639,8 @@ legend {
    BUTTONS
    ========================================================= */
 
+/* Shared button layout. */
+
 .primary-button,
 .secondary-button {
     display: inline-flex;
@@ -559,6 +654,8 @@ legend {
 }
 
 
+/* Main action button. */
+
 .primary-button {
     width: 100%;
     background: var(--orange);
@@ -566,10 +663,14 @@ legend {
 }
 
 
+/* Darkens the main button on hover. */
+
 .primary-button:hover {
     background: var(--orange-dark);
 }
 
+
+/* Secondary action button. */
 
 .secondary-button {
     background: var(--paper);
@@ -581,10 +682,14 @@ legend {
    FLASH MESSAGES
    ========================================================= */
 
+/* Adds spacing around messages. */
+
 .flash-list {
     margin-bottom: 18px;
 }
 
+
+/* Base flash message styling. */
 
 .flash {
     padding: 12px 15px;
@@ -594,11 +699,15 @@ legend {
 }
 
 
+/* Successful message styling. */
+
 .flash.success {
     background: var(--green-light);
     color: var(--green);
 }
 
+
+/* Error message styling. */
 
 .flash.error {
     background: #fbe5e3;
@@ -610,6 +719,8 @@ legend {
    PAGE HEADINGS
    ========================================================= */
 
+/* Styles main page headings. */
+
 .page-heading h1,
 .receipt-header h1 {
     margin: 0;
@@ -617,6 +728,8 @@ legend {
     letter-spacing: -0.04em;
 }
 
+
+/* Styles supporting page heading text. */
 
 .page-heading p:not(.eyebrow) {
     color: var(--muted);
@@ -627,6 +740,8 @@ legend {
    ORDER HISTORY TABLE
    ========================================================= */
 
+/* Creates the scrollable table container. */
+
 .orders-table-wrap {
     overflow-x: auto;
     background: var(--paper);
@@ -635,11 +750,15 @@ legend {
 }
 
 
+/* Sets the table width. */
+
 table {
     width: 100%;
     border-collapse: collapse;
 }
 
+
+/* Styles table cells. */
 
 th,
 td {
@@ -650,6 +769,8 @@ td {
 }
 
 
+/* Styles table headings. */
+
 th {
     background: #f6f3eb;
     color: var(--muted);
@@ -659,31 +780,14 @@ th {
 }
 
 
+/* Removes the border from the final table row. */
+
 tbody tr:last-child td {
     border-bottom: 0;
 }
 
 
-/* =========================================================
-   TABLE ACTIONS
-   ========================================================= */
-
-.status {
-    display: inline-block;
-    padding: 5px 9px;
-    border-radius: 999px;
-    background: var(--green-light);
-    color: var(--green);
-    font-size: 10px;
-    font-weight: 900;
-}
-
-
-.status.cancelled {
-    background: #fbe5e3;
-    color: var(--red);
-}
-
+/* Aligns table action buttons. */
 
 .table-actions {
     display: flex;
@@ -703,6 +807,8 @@ tbody tr:last-child td {
 }
 
 
+/* Styles the delete/cancel action. */
+
 .danger-link {
     border: 0;
     padding: 0;
@@ -717,11 +823,15 @@ tbody tr:last-child td {
    RECEIPT
    ========================================================= */
 
+/* Controls the receipt width and position. */
+
 .receipt-wrap {
     max-width: 760px;
     margin: 30px auto;
 }
 
+
+/* Aligns receipt title and status. */
 
 .receipt-header {
     display: flex;
@@ -732,15 +842,21 @@ tbody tr:last-child td {
 }
 
 
+/* Styles receipt date information. */
+
 .receipt-header > div > p:last-child {
     color: var(--muted);
 }
 
 
+/* Controls receipt card overflow. */
+
 .receipt-card {
     overflow: hidden;
 }
 
+
+/* Adds spacing inside receipt sections. */
 
 .receipt-section,
 .customer-box {
@@ -748,11 +864,15 @@ tbody tr:last-child td {
 }
 
 
+/* Styles receipt section headings. */
+
 .receipt-section h2,
 .customer-box h3 {
     margin-top: 0;
 }
 
+
+/* Styles each receipt item. */
 
 .receipt-line {
     padding: 14px 0;
@@ -760,10 +880,14 @@ tbody tr:last-child td {
 }
 
 
+/* Removes the final receipt item border. */
+
 .receipt-line:last-child {
     border-bottom: 0;
 }
 
+
+/* Styles quantity information. */
 
 .receipt-line span {
     display: block;
@@ -772,9 +896,7 @@ tbody tr:last-child td {
 }
 
 
-/* =========================================================
-   RECEIPT TOTALS
-   ========================================================= */
+/* Styles receipt totals section. */
 
 .totals {
     padding: 22px 28px;
@@ -782,11 +904,15 @@ tbody tr:last-child td {
 }
 
 
+/* Styles individual totals. */
+
 .totals > div {
     padding: 7px 0;
     font-size: 13px;
 }
 
+
+/* Highlights the final total. */
 
 .grand-total {
     margin-top: 9px;
@@ -796,9 +922,7 @@ tbody tr:last-child td {
 }
 
 
-/* =========================================================
-   CUSTOMER INFORMATION
-   ========================================================= */
+/* Styles customer information. */
 
 .customer-box {
     border-top: 1px solid var(--line);
@@ -811,15 +935,29 @@ tbody tr:last-child td {
 }
 
 
+/* Aligns receipt action buttons. */
+
+.action-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+
 /* =========================================================
    EMPTY STATE
    ========================================================= */
+
+/* Styles pages with no orders/content. */
 
 .empty-state {
     padding: 60px 24px;
     text-align: center;
 }
 
+
+/* Creates the empty-state icon. */
 
 .empty-icon {
     width: 60px;
@@ -835,11 +973,15 @@ tbody tr:last-child td {
 }
 
 
+/* Styles empty-state description. */
+
 .empty-state p {
     color: var(--muted);
     margin-bottom: 22px;
 }
 
+
+/* Prevents the empty-state button from filling the width. */
 
 .empty-state .primary-button {
     width: auto;
@@ -850,6 +992,8 @@ tbody tr:last-child td {
    FOOTER
    ========================================================= */
 
+/* Styles the website footer. */
+
 .site-footer {
     padding: 24px;
     border-top: 1px solid var(--line);
@@ -859,9 +1003,7 @@ tbody tr:last-child td {
 }
 
 
-/* =========================================================
-   ACCESSIBILITY
-   ========================================================= */
+/* Hides content visually while keeping it accessible. */
 
 .sr-only {
     position: absolute;
@@ -880,24 +1022,26 @@ tbody tr:last-child td {
    RESPONSIVE DESIGN
    ========================================================= */
 
+/* Adjusts the layout for tablets and smaller screens. */
+
 @media (max-width: 900px) {
 
     .product-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-
     .hero {
         grid-template-columns: 1fr;
         padding: 42px;
     }
-
 
     .hero-art {
         display: none;
     }
 }
 
+
+/* Adjusts the layout for mobile screens. */
 
 @media (max-width: 650px) {
 
@@ -908,47 +1052,215 @@ tbody tr:last-child td {
         flex-direction: column;
     }
 
-
     .page-shell {
         padding: 20px 14px 50px;
     }
-
 
     .hero {
         padding: 32px 24px;
         border-radius: 20px;
     }
 
-
     .product-grid,
     .checkout-layout {
         grid-template-columns: 1fr;
     }
 
-
     .product-card {
         min-height: 0;
     }
 
-
     .action-row {
         flex-direction: column;
     }
+
+
+    /* =========================================
+       ANIMATIONS
+       ========================================= */
+
+    /* Fades the page in when it loads. */
+
+    body {
+        animation: pageFadeIn 0.5s ease-out;
+    }
+
+
+    /* Defines the page fade animation. */
+
+    @keyframes pageFadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+
+    /* Adds smooth movement to links. */
+
+    a {
+        transition:
+            transform 0.2s ease,
+            opacity 0.2s ease;
+    }
+
+
+    /* Slightly fades links when hovered. */
+
+    a:hover {
+        opacity: 0.85;
+    }
+
+
+    /* Adds smooth movement to buttons. */
+
+    button,
+    .primary-button,
+    .secondary-button {
+        transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+    }
+
+
+    /* Moves buttons slightly upward on hover. */
+
+    button:hover,
+    .primary-button:hover,
+    .secondary-button:hover {
+        transform: translateY(-2px);
+    }
+
+
+    /* Slightly shrinks buttons when clicked. */
+
+    button:active,
+    .primary-button:active,
+    .secondary-button:active {
+        transform: translateY(0) scale(0.98);
+    }
+
+
+    /* Adds hover movement to product cards. */
+
+    .product-card,
+    .burger-card {
+        transition:
+            transform 0.25s ease,
+            box-shadow 0.25s ease;
+    }
+
+
+    .product-card:hover,
+    .burger-card:hover {
+        transform: translateY(-5px);
+    }
+
+
+    /* Animates the receipt when it appears. */
+
+    .receipt-card {
+        animation: receiptAppear 0.5s ease-out;
+    }
+
+
+    /* Defines the receipt entrance animation. */
+
+    @keyframes receiptAppear {
+        from {
+            opacity: 0;
+            transform: translateY(15px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+
+    /* Animates order history cards. */
+
+    .order-card {
+        animation: orderAppear 0.45s ease-out both;
+    }
+
+
+    /* Defines the order card entrance animation. */
+
+    @keyframes orderAppear {
+        from {
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+
+    /* Adds smooth focus effects to form fields. */
+
+    input,
+    select,
+    textarea {
+        transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+    }
+
+
+    /* Slightly enlarges focused form fields. */
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+        transform: scale(1.01);
+    }
+
+
+    /* Animates error and notification messages. */
+
+    .flash,
+    .flash-message,
+    .error,
+    .error-message {
+        animation: messageAppear 0.4s ease-out;
+    }
+
+
+    /* Defines the message entrance animation. */
+
+    @keyframes messageAppear {
+        from {
+            opacity: 0;
+            transform: translateY(-8px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
 }
+/* =========================================
+   OSC BURGER CO. - ANIMATIONS
+   ========================================= */
 
+/* Fades the website in when loaded. */
 
-/* =========================================================
-   ANIMATIONS
-   ========================================================= */
-
-/* Fades the page in when it loads */
 body {
     animation: pageFadeIn 0.6s ease-out;
 }
 
 
 @keyframes pageFadeIn {
-
     from {
         opacity: 0;
     }
@@ -959,31 +1271,16 @@ body {
 }
 
 
-/* Gives links a smooth hover effect */
-nav a {
-    transition:
-        transform 0.2s ease,
-        opacity 0.2s ease,
-        background 0.2s ease,
-        color 0.2s ease;
-}
+/* Adds smooth button transitions. */
 
-
-nav a:hover {
-    transform: translateY(-2px);
-}
-
-
-/* Makes buttons lift slightly when hovered */
 button,
 .primary-button,
 .secondary-button {
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+
+/* Moves buttons slightly when hovered. */
 
 button:hover,
 .primary-button:hover,
@@ -992,6 +1289,8 @@ button:hover,
 }
 
 
+/* Shrinks buttons slightly when clicked. */
+
 button:active,
 .primary-button:active,
 .secondary-button:active {
@@ -999,29 +1298,28 @@ button:active,
 }
 
 
-/* Makes burger cards lift when hovered */
-.product-card {
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
+/* Adds a hover animation to burger cards. */
+
+.product-card,
+.burger-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 
-.product-card:hover {
+.product-card:hover,
+.burger-card:hover {
     transform: translateY(-5px);
-    box-shadow:
-        0 14px 32px rgba(23, 32, 24, 0.1);
 }
 
 
-/* Smoothly displays the receipt */
+/* Animates the receipt card appearing. */
+
 .receipt-card {
     animation: receiptAppear 0.6s ease-out;
 }
 
 
 @keyframes receiptAppear {
-
     from {
         opacity: 0;
         transform: translateY(15px);
@@ -1034,14 +1332,14 @@ button:active,
 }
 
 
-/* Smoothly displays order history */
-.orders-table-wrap {
+/* Animates order history cards. */
+
+.order-card {
     animation: orderAppear 0.5s ease-out;
 }
 
 
 @keyframes orderAppear {
-
     from {
         opacity: 0;
         transform: translateY(15px);
@@ -1054,15 +1352,16 @@ button:active,
 }
 
 
-/* Gives form fields a small focus animation */
+/* Adds smooth transitions to form fields. */
+
 input,
 select,
 textarea {
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+
+/* Adds a small focus animation to form fields. */
 
 input:focus,
 select:focus,
@@ -1071,14 +1370,17 @@ textarea:focus {
 }
 
 
-/* Makes messages slide down when they appear */
-.flash {
+/* Animates flash and error messages. */
+
+.flash,
+.flash-message,
+.error,
+.error-message {
     animation: messageAppear 0.4s ease-out;
 }
 
 
 @keyframes messageAppear {
-
     from {
         opacity: 0;
         transform: translateY(-8px);
@@ -1087,17 +1389,5 @@ textarea:focus {
     to {
         opacity: 1;
         transform: translateY(0);
-    }
-}
-
-
-/* Disables animations for users who prefer reduced motion */
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        animation: none !important;
-        transition: none !important;
     }
 }
