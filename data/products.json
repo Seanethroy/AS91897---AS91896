@@ -27,16 +27,16 @@
     "Spicy Burger": {
         "description": "Beef patty, jalapenos and spicy house sauce.",
         "price": 10.0,
-        "stock": 11
+        "stock": 10
     },
     "Veggie Burger": {
         "description": "Plant-based patty with fresh salad and sauce.",
         "price": 9.0,
-        "stock": 12
+        "stock": 11
     },
     "Double Burger": {
         "description": "Two beef patties with cheese and house sauce.",
         "price": 12.0,
-        "stock": 10
+        "stock": 9
     }
 }
