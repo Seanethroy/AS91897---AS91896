@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}
-Receipt #{{ order.order_id }} | OSC Burger Co.
+Receipt #{{ order["order_id"] }} | OSC Burger Co.
 {% endblock %}
 
 
@@ -19,19 +19,19 @@ Receipt #{{ order.order_id }} | OSC Burger Co.
             </p>
 
             <h1>
-                Thanks, {{ order.customer_name }}!
+                Thanks, {{ order["customer_name"] }}!
             </h1>
 
             <p>
-                Order #{{ order.order_id }}
-                · {{ order.date }}
+                Order #{{ order["order_id"] }}
+                · {{ order["date"] }}
             </p>
 
         </div>
 
 
         <span class="status active">
-            {{ order.status }}
+            {{ order["status"] }}
         </span>
 
     </div>
@@ -47,27 +47,27 @@ Receipt #{{ order.order_id }} | OSC Burger Co.
             </h2>
 
 
-            {% for item in order.items %}
+            {% for item in order["items"] %}
 
             <div class="receipt-line">
 
                 <div>
 
                     <strong>
-                        {{ item.name }}
+                        {{ item["name"] }}
                     </strong>
 
                     <span>
-                        {{ item.quantity }}
+                        {{ item["quantity"] }}
                         ×
-                        ${{ "%.2f"|format(item.price) }}
+                        ${{ "%.2f"|format(item["price"]) }}
                     </span>
 
                 </div>
 
 
                 <strong>
-                    ${{ "%.2f"|format(item.item_total) }}
+                    ${{ "%.2f"|format(item["item_total"]) }}
                 </strong>
 
             </div>
@@ -86,7 +86,7 @@ Receipt #{{ order.order_id }} | OSC Burger Co.
                 </span>
 
                 <strong>
-                    ${{ "%.2f"|format(order.subtotal) }}
+                    ${{ "%.2f"|format(order["subtotal"]) }}
                 </strong>
 
             </div>
@@ -99,7 +99,7 @@ Receipt #{{ order.order_id }} | OSC Burger Co.
                 </span>
 
                 <strong>
-                    -${{ "%.2f"|format(order.discount) }}
+                    -${{ "%.2f"|format(order["discount"]) }}
                 </strong>
 
             </div>
@@ -112,7 +112,7 @@ Receipt #{{ order.order_id }} | OSC Burger Co.
                 </span>
 
                 <strong>
-                    ${{ "%.2f"|format(order.delivery_charge) }}
+                    ${{ "%.2f"|format(order["delivery_charge"]) }}
                 </strong>
 
             </div>
@@ -125,7 +125,7 @@ Receipt #{{ order.order_id }} | OSC Burger Co.
                 </span>
 
                 <strong>
-                    ${{ "%.2f"|format(order.total) }}
+                    ${{ "%.2f"|format(order["total"]) }}
                 </strong>
 
             </div>
@@ -142,7 +142,7 @@ Receipt #{{ order.order_id }} | OSC Burger Co.
 
             <p>
                 <strong>Name:</strong>
-                {{ order.customer_name }}
+                {{ order["customer_name"] }}
             </p>
 
 
@@ -152,7 +152,7 @@ Receipt #{{ order.order_id }} | OSC Burger Co.
                     Method:
                 </strong>
 
-                {% if order.delivery %}
+                {% if order["delivery"] %}
                     Delivery
                 {% else %}
                     Pickup
@@ -161,7 +161,7 @@ Receipt #{{ order.order_id }} | OSC Burger Co.
             </p>
 
 
-            {% if order.delivery %}
+            {% if order["delivery"] %}
 
                 <p>
 
@@ -169,7 +169,7 @@ Receipt #{{ order.order_id }} | OSC Burger Co.
                         Address:
                     </strong>
 
-                    {{ order.address }}
+                    {{ order["address"] }}
 
                 </p>
 
@@ -180,7 +180,7 @@ Receipt #{{ order.order_id }} | OSC Burger Co.
                         Phone:
                     </strong>
 
-                    {{ order.phone }}
+                    {{ order["phone"] }}
 
                 </p>
 

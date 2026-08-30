@@ -1,42 +1,42 @@
 {
     "Classic Burger": {
         "description": "Beef patty, lettuce, tomato and house sauce.",
-        "price": 8.50,
-        "stock": 20
+        "price": 8.5,
+        "stock": 19
     },
     "Cheese Burger": {
         "description": "Classic burger with melted cheddar cheese.",
-        "price": 9.50,
+        "price": 9.5,
         "stock": 18
     },
     "Bacon Burger": {
         "description": "Beef patty, crispy bacon, lettuce and sauce.",
-        "price": 10.50,
+        "price": 10.5,
         "stock": 15
     },
     "Chicken Burger": {
         "description": "Crispy chicken, lettuce and creamy mayo.",
-        "price": 9.50,
+        "price": 9.5,
         "stock": 16
     },
     "BBQ Burger": {
         "description": "Beef patty, onion rings and smoky BBQ sauce.",
-        "price": 10.00,
+        "price": 10.0,
         "stock": 14
     },
     "Spicy Burger": {
         "description": "Beef patty, jalapenos and spicy house sauce.",
-        "price": 10.00,
+        "price": 10.0,
         "stock": 12
     },
     "Veggie Burger": {
         "description": "Plant-based patty with fresh salad and sauce.",
-        "price": 9.00,
+        "price": 9.0,
         "stock": 12
     },
     "Double Burger": {
         "description": "Two beef patties with cheese and house sauce.",
-        "price": 12.00,
+        "price": 12.0,
         "stock": 10
     }
 }
