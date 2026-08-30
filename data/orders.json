@@ -20,5 +20,33 @@
         "total_items": 1,
         "date": "31/08/2026 11:05",
         "status": "Active"
+    },
+    {
+        "order_id": 2,
+        "customer_name": "hhu",
+        "items": [
+            {
+                "name": "BBQ Burger",
+                "quantity": 1,
+                "price": 10.0,
+                "item_total": 10.0
+            },
+            {
+                "name": "Spicy Burger",
+                "quantity": 1,
+                "price": 10.0,
+                "item_total": 10.0
+            }
+        ],
+        "delivery": false,
+        "address": "",
+        "phone": "",
+        "subtotal": 20.0,
+        "discount": 0.0,
+        "delivery_charge": 0.0,
+        "total": 20.0,
+        "total_items": 2,
+        "date": "31/08/2026 11:09",
+        "status": "Active"
     }
 ]

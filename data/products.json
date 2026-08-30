@@ -22,12 +22,12 @@
     "BBQ Burger": {
         "description": "Beef patty, onion rings and smoky BBQ sauce.",
         "price": 10.0,
-        "stock": 14
+        "stock": 13
     },
     "Spicy Burger": {
         "description": "Beef patty, jalapenos and spicy house sauce.",
         "price": 10.0,
-        "stock": 12
+        "stock": 11
     },
     "Veggie Burger": {
         "description": "Plant-based patty with fresh salad and sauce.",
