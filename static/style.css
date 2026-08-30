@@ -1,3 +1,8 @@
+/* =========================================================
+   OSC BURGER CO.
+   Main colour variables
+   ========================================================= */
+
 :root {
     --ink: #172018;
     --muted: #6b746d;
@@ -12,6 +17,10 @@
     --shadow: 0 18px 45px rgba(23, 32, 24, 0.08);
 }
 
+
+/* =========================================================
+   BASIC PAGE STYLING
+   ========================================================= */
 
 * {
     box-sizing: border-box;
@@ -38,6 +47,10 @@ input {
     font: inherit;
 }
 
+
+/* =========================================================
+   HEADER AND NAVIGATION
+   ========================================================= */
 
 .site-header {
     background: var(--paper);
@@ -118,12 +131,20 @@ nav a:hover {
 }
 
 
+/* =========================================================
+   PAGE LAYOUT
+   ========================================================= */
+
 .page-shell {
     max-width: 1180px;
     margin: auto;
     padding: 32px 24px 70px;
 }
 
+
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
 
 .hero {
     min-height: 390px;
@@ -175,6 +196,7 @@ nav a:hover {
 }
 
 
+/* Hero information pills */
 .hero-pills {
     display: flex;
     flex-wrap: wrap;
@@ -190,6 +212,10 @@ nav a:hover {
     font-size: 12px;
 }
 
+
+/* =========================================================
+   BURGER ILLUSTRATION
+   ========================================================= */
 
 .hero-art {
     display: grid;
@@ -245,6 +271,10 @@ nav a:hover {
 }
 
 
+/* =========================================================
+   SECTION HEADINGS
+   ========================================================= */
+
 .section-heading,
 .page-heading {
     margin: 58px 0 22px;
@@ -272,6 +302,10 @@ nav a:hover {
     color: var(--muted);
 }
 
+
+/* =========================================================
+   PRODUCT CARDS
+   ========================================================= */
 
 .product-grid {
     display: grid;
@@ -373,6 +407,10 @@ nav a:hover {
 }
 
 
+/* =========================================================
+   CHECKOUT
+   ========================================================= */
+
 .checkout-layout {
     display: grid;
     grid-template-columns: 1.35fr 0.65fr;
@@ -414,6 +452,10 @@ nav a:hover {
 }
 
 
+/* =========================================================
+   DELIVERY / PAYMENT OPTIONS
+   ========================================================= */
+
 fieldset {
     margin: 24px 0 0;
     padding: 0;
@@ -441,6 +483,10 @@ legend {
     display: none;
 }
 
+
+/* =========================================================
+   ORDER SUMMARY
+   ========================================================= */
 
 .summary-card {
     background: var(--green);
@@ -496,6 +542,10 @@ legend {
 }
 
 
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
 .primary-button,
 .secondary-button {
     display: inline-flex;
@@ -527,6 +577,10 @@ legend {
 }
 
 
+/* =========================================================
+   FLASH MESSAGES
+   ========================================================= */
+
 .flash-list {
     margin-bottom: 18px;
 }
@@ -552,6 +606,10 @@ legend {
 }
 
 
+/* =========================================================
+   PAGE HEADINGS
+   ========================================================= */
+
 .page-heading h1,
 .receipt-header h1 {
     margin: 0;
@@ -564,6 +622,10 @@ legend {
     color: var(--muted);
 }
 
+
+/* =========================================================
+   ORDER HISTORY TABLE
+   ========================================================= */
 
 .orders-table-wrap {
     overflow-x: auto;
@@ -601,6 +663,10 @@ tbody tr:last-child td {
     border-bottom: 0;
 }
 
+
+/* =========================================================
+   TABLE ACTIONS
+   ========================================================= */
 
 .status {
     display: inline-block;
@@ -646,6 +712,10 @@ tbody tr:last-child td {
     cursor: pointer;
 }
 
+
+/* =========================================================
+   RECEIPT
+   ========================================================= */
 
 .receipt-wrap {
     max-width: 760px;
@@ -702,6 +772,10 @@ tbody tr:last-child td {
 }
 
 
+/* =========================================================
+   RECEIPT TOTALS
+   ========================================================= */
+
 .totals {
     padding: 22px 28px;
     background: #f7f4ec;
@@ -722,6 +796,10 @@ tbody tr:last-child td {
 }
 
 
+/* =========================================================
+   CUSTOMER INFORMATION
+   ========================================================= */
+
 .customer-box {
     border-top: 1px solid var(--line);
 }
@@ -733,13 +811,9 @@ tbody tr:last-child td {
 }
 
 
-.action-row {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-}
-
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
 
 .empty-state {
     padding: 60px 24px;
@@ -772,6 +846,10 @@ tbody tr:last-child td {
 }
 
 
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
 .site-footer {
     padding: 24px;
     border-top: 1px solid var(--line);
@@ -780,6 +858,10 @@ tbody tr:last-child td {
     font-size: 11px;
 }
 
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
 
 .sr-only {
     position: absolute;
@@ -794,16 +876,22 @@ tbody tr:last-child td {
 }
 
 
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
 @media (max-width: 900px) {
 
     .product-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
+
     .hero {
         grid-template-columns: 1fr;
         padding: 42px;
     }
+
 
     .hero-art {
         display: none;
@@ -820,180 +908,47 @@ tbody tr:last-child td {
         flex-direction: column;
     }
 
+
     .page-shell {
         padding: 20px 14px 50px;
     }
+
 
     .hero {
         padding: 32px 24px;
         border-radius: 20px;
     }
 
+
     .product-grid,
     .checkout-layout {
         grid-template-columns: 1fr;
     }
 
+
     .product-card {
         min-height: 0;
     }
 
+
     .action-row {
         flex-direction: column;
     }
+}
 
-    /* =========================================
+
+/* =========================================================
    ANIMATIONS
-   ========================================= */
+   ========================================================= */
 
-/* Page fade in */
-body {
-    animation: pageFadeIn 0.5s ease-out;
-}
-
-@keyframes pageFadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-
-/* Smooth hover for links */
-a {
-    transition:
-        transform 0.2s ease,
-        opacity 0.2s ease;
-}
-
-a:hover {
-    opacity: 0.85;
-}
-
-
-/* Buttons */
-button,
-.primary-button,
-.secondary-button {
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-button:hover,
-.primary-button:hover,
-.secondary-button:hover {
-    transform: translateY(-2px);
-}
-
-button:active,
-.primary-button:active,
-.secondary-button:active {
-    transform: translateY(0) scale(0.98);
-}
-
-
-/* Burger/product cards */
-.product-card,
-.burger-card {
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-.product-card:hover,
-.burger-card:hover {
-    transform: translateY(-5px);
-}
-
-
-/* Receipt */
-.receipt-card {
-    animation: receiptAppear 0.5s ease-out;
-}
-
-@keyframes receiptAppear {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-/* Order history cards */
-.order-card {
-    animation: orderAppear 0.45s ease-out both;
-}
-
-@keyframes orderAppear {
-    from {
-        opacity: 0;
-        transform: translateY(12px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-/* Form inputs */
-input,
-select,
-textarea {
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-    transform: scale(1.01);
-}
-
-
-/* Flash messages */
-.flash,
-.flash-message,
-.error,
-.error-message {
-    animation: messageAppear 0.4s ease-out;
-}
-
-@keyframes messageAppear {
-    from {
-        opacity: 0;
-        transform: translateY(-8px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-}
-
-/* =========================================
-   OSC BURGER CO. - ANIMATIONS
-   ========================================= */
-
-/* Page loads with a small fade */
+/* Fades the page in when it loads */
 body {
     animation: pageFadeIn 0.6s ease-out;
 }
 
+
 @keyframes pageFadeIn {
+
     from {
         opacity: 0;
     }
@@ -1004,18 +959,38 @@ body {
 }
 
 
-/* Buttons */
+/* Gives links a smooth hover effect */
+nav a {
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+nav a:hover {
+    transform: translateY(-2px);
+}
+
+
+/* Makes buttons lift slightly when hovered */
 button,
 .primary-button,
 .secondary-button {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
 }
+
 
 button:hover,
 .primary-button:hover,
 .secondary-button:hover {
     transform: translateY(-2px);
 }
+
 
 button:active,
 .primary-button:active,
@@ -1024,24 +999,29 @@ button:active,
 }
 
 
-/* Burger cards */
-.product-card,
-.burger-card {
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+/* Makes burger cards lift when hovered */
+.product-card {
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
-.product-card:hover,
-.burger-card:hover {
+
+.product-card:hover {
     transform: translateY(-5px);
+    box-shadow:
+        0 14px 32px rgba(23, 32, 24, 0.1);
 }
 
 
-/* Receipt animation */
+/* Smoothly displays the receipt */
 .receipt-card {
     animation: receiptAppear 0.6s ease-out;
 }
 
+
 @keyframes receiptAppear {
+
     from {
         opacity: 0;
         transform: translateY(15px);
@@ -1054,12 +1034,14 @@ button:active,
 }
 
 
-/* Order history */
-.order-card {
+/* Smoothly displays order history */
+.orders-table-wrap {
     animation: orderAppear 0.5s ease-out;
 }
 
+
 @keyframes orderAppear {
+
     from {
         opacity: 0;
         transform: translateY(15px);
@@ -1072,12 +1054,15 @@ button:active,
 }
 
 
-/* Form inputs */
+/* Gives form fields a small focus animation */
 input,
 select,
 textarea {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
+
 
 input:focus,
 select:focus,
@@ -1086,15 +1071,14 @@ textarea:focus {
 }
 
 
-/* Flash messages */
-.flash,
-.flash-message,
-.error,
-.error-message {
+/* Makes messages slide down when they appear */
+.flash {
     animation: messageAppear 0.4s ease-out;
 }
 
+
 @keyframes messageAppear {
+
     from {
         opacity: 0;
         transform: translateY(-8px);
@@ -1103,5 +1087,17 @@ textarea:focus {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+
+/* Disables animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
     }
 }
