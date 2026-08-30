@@ -2,7 +2,7 @@
     "Classic Burger": {
         "description": "Beef patty, lettuce, tomato and house sauce.",
         "price": 8.5,
-        "stock": 19
+        "stock": 18
     },
     "Cheese Burger": {
         "description": "Classic burger with melted cheddar cheese.",
